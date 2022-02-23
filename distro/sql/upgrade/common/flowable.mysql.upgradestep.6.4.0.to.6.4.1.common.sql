@@ -1,5 +1,5 @@
 create table ACT_HI_TSK_LOG (
-  ID_ bigint auto_increment,
+  ID_ bigint identify,
   TYPE_ varchar(64),
   TASK_ID_ varchar(64) not null,
   TIME_STAMP_ timestamp(3) not null,
@@ -14,7 +14,7 @@ create table ACT_HI_TSK_LOG (
   SCOPE_TYPE_ varchar(255),
   TENANT_ID_ varchar(255) default '',
   primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_ENTITYLINK (
     ID_ varchar(64),
@@ -29,7 +29,7 @@ create table ACT_RU_ENTITYLINK (
     REF_SCOPE_DEFINITION_ID_ varchar(255),
     HIERARCHY_TYPE_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_ENT_LNK_SCOPE on ACT_RU_ENTITYLINK(SCOPE_ID_, SCOPE_TYPE_, LINK_TYPE_);
 create index ACT_IDX_ENT_LNK_SCOPE_DEF on ACT_RU_ENTITYLINK(SCOPE_DEFINITION_ID_, SCOPE_TYPE_, LINK_TYPE_);
@@ -46,7 +46,7 @@ create table ACT_HI_ENTITYLINK (
     REF_SCOPE_DEFINITION_ID_ varchar(255),
     HIERARCHY_TYPE_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_HI_ENT_LNK_SCOPE on ACT_HI_ENTITYLINK(SCOPE_ID_, SCOPE_TYPE_, LINK_TYPE_);
 create index ACT_IDX_HI_ENT_LNK_SCOPE_DEF on ACT_HI_ENTITYLINK(SCOPE_DEFINITION_ID_, SCOPE_TYPE_, LINK_TYPE_);

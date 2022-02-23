@@ -5,7 +5,7 @@ alter table ACT_RU_EXECUTION
 	add NAME_ varchar(255);
 	
 create table ACT_EVT_LOG (
-    LOG_NR_ bigint auto_increment,
+    LOG_NR_ bigint identify,
     TYPE_ varchar(64),
     PROC_DEF_ID_ varchar(64),
     PROC_INST_ID_ varchar(64),

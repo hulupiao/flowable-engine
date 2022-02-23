@@ -34,7 +34,7 @@ create table ACT_RU_TIMER_JOB (
     HANDLER_CFG_ varchar(4000),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_SUSPENDED_JOB (
     ID_ varchar(64) NOT NULL,
@@ -53,7 +53,7 @@ create table ACT_RU_SUSPENDED_JOB (
     HANDLER_CFG_ varchar(4000),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_DEADLETTER_JOB (
     ID_ varchar(64) NOT NULL,
@@ -71,7 +71,7 @@ create table ACT_RU_DEADLETTER_JOB (
     HANDLER_CFG_ varchar(4000),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 alter table ACT_RU_JOB 
     add constraint ACT_FK_JOB_EXECUTION 

@@ -16,4 +16,4 @@ create table ACT_RU_HISTORY_JOB (
     TENANT_ID_ varchar(255) default '',
     CREATE_TIME_ timestamp(3) NULL,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;

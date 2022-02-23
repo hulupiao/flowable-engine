@@ -15,4 +15,4 @@ create table ACT_HI_TASKINST (
     DURATION_ bigint,
     DELETE_REASON_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;

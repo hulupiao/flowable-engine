@@ -28,10 +28,10 @@ create table ACT_HI_TASKINST (
     TENANT_ID_ varchar(255) default '',
     LAST_UPDATED_TIME_ datetime,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_HI_TSK_LOG (
-    ID_ bigint auto_increment,
+    ID_ bigint identify,
     TYPE_ varchar(64),
     TASK_ID_ varchar(64) not null,
     TIME_STAMP_ datetime not null,
@@ -46,7 +46,7 @@ create table ACT_HI_TSK_LOG (
     SCOPE_TYPE_ varchar(255),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_HI_TASK_SCOPE on ACT_HI_TASKINST(SCOPE_ID_, SCOPE_TYPE_);
 create index ACT_IDX_HI_TASK_SUB_SCOPE on ACT_HI_TASKINST(SUB_SCOPE_ID_, SCOPE_TYPE_);

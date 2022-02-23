@@ -15,7 +15,7 @@ create table ACT_RU_EVENT_SUBSCR (
     SCOPE_TYPE_ varchar(64),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_EVENT_SUBSCR_CONFIG_ on ACT_RU_EVENT_SUBSCR(CONFIGURATION_);
 

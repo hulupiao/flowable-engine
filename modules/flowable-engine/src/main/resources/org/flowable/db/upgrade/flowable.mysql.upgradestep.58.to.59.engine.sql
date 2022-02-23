@@ -26,7 +26,7 @@ create table ACT_RU_EVENT_SUBSCR (
     CONFIGURATION_ varchar(255),
     CREATED_ timestamp not null DEFAULT CURRENT_TIMESTAMP,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 create index ACT_IDX_EVENT_SUBSCR_CONFIG_ on ACT_RU_EVENT_SUBSCR(CONFIGURATION_);
 
 alter table ACT_RU_EVENT_SUBSCR

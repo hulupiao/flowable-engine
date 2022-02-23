@@ -3,17 +3,17 @@ create table ACT_GE_PROPERTY (
     VALUE_ varchar(300),
     REV_ integer,
     primary key (NAME_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_GE_BYTEARRAY (
     ID_ varchar(64),
     REV_ integer,
     NAME_ varchar(255),
     DEPLOYMENT_ID_ varchar(64),
-    BYTES_ LONGBLOB,
+    BYTES_ BLOB,
     GENERATED_ TINYINT,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 insert into ACT_GE_PROPERTY
 values ('common.schema.version', '6.6.0.0', 1);
@@ -39,7 +39,7 @@ create table ACT_RU_ENTITYLINK (
     ROOT_SCOPE_TYPE_ varchar(255),
     HIERARCHY_TYPE_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_ENT_LNK_SCOPE on ACT_RU_ENTITYLINK(SCOPE_ID_, SCOPE_TYPE_, LINK_TYPE_);
 create index ACT_IDX_ENT_LNK_ROOT_SCOPE on ACT_RU_ENTITYLINK(ROOT_SCOPE_ID_, ROOT_SCOPE_TYPE_, LINK_TYPE_);
@@ -63,7 +63,7 @@ create table ACT_HI_ENTITYLINK (
     ROOT_SCOPE_TYPE_ varchar(255),
     HIERARCHY_TYPE_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_HI_ENT_LNK_SCOPE on ACT_HI_ENTITYLINK(SCOPE_ID_, SCOPE_TYPE_, LINK_TYPE_);
 create index ACT_IDX_HI_ENT_LNK_ROOT_SCOPE on ACT_HI_ENTITYLINK(ROOT_SCOPE_ID_, ROOT_SCOPE_TYPE_, LINK_TYPE_);
@@ -84,7 +84,7 @@ create table ACT_RU_IDENTITYLINK (
     SCOPE_TYPE_ varchar(255),
     SCOPE_DEFINITION_ID_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_IDENT_LNK_USER on ACT_RU_IDENTITYLINK(USER_ID_);
 create index ACT_IDX_IDENT_LNK_GROUP on ACT_RU_IDENTITYLINK(GROUP_ID_);
@@ -107,7 +107,7 @@ create table ACT_HI_IDENTITYLINK (
     SCOPE_TYPE_ varchar(255),
     SCOPE_DEFINITION_ID_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_HI_IDENT_LNK_USER on ACT_HI_IDENTITYLINK(USER_ID_);
 create index ACT_IDX_HI_IDENT_LNK_SCOPE on ACT_HI_IDENTITYLINK(SCOPE_ID_, SCOPE_TYPE_);
@@ -144,7 +144,7 @@ create table ACT_RU_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_TIMER_JOB (
     ID_ varchar(64) NOT NULL,
@@ -175,7 +175,7 @@ create table ACT_RU_TIMER_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_SUSPENDED_JOB (
     ID_ varchar(64) NOT NULL,
@@ -204,7 +204,7 @@ create table ACT_RU_SUSPENDED_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_DEADLETTER_JOB (
     ID_ varchar(64) NOT NULL,
@@ -232,7 +232,7 @@ create table ACT_RU_DEADLETTER_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_HISTORY_JOB (
     ID_ varchar(64) NOT NULL,
@@ -250,7 +250,7 @@ create table ACT_RU_HISTORY_JOB (
     SCOPE_TYPE_ varchar(255),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_EXTERNAL_JOB (
     ID_ varchar(64) NOT NULL,
@@ -281,7 +281,7 @@ create table ACT_RU_EXTERNAL_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_JOB_EXCEPTION_STACK_ID on ACT_RU_JOB(EXCEPTION_STACK_ID_);
 create index ACT_IDX_JOB_CUSTOM_VALUES_ID on ACT_RU_JOB(CUSTOM_VALUES_ID_);
@@ -387,7 +387,7 @@ create table FLW_RU_BATCH (
     BATCH_DOC_ID_ varchar(64),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table FLW_RU_BATCH_PART (
     ID_ varchar(64) not null,
@@ -405,7 +405,7 @@ create table FLW_RU_BATCH_PART (
     RESULT_DOC_ID_ varchar(64),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index FLW_IDX_BATCH_PART on FLW_RU_BATCH_PART(BATCH_ID_);
 
@@ -449,7 +449,7 @@ create table ACT_RU_TASK (
     ID_LINK_COUNT_ integer,
     SUB_TASK_COUNT_ integer,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_TASK_CREATE on ACT_RU_TASK(CREATE_TIME_);
 create index ACT_IDX_TASK_SCOPE on ACT_RU_TASK(SCOPE_ID_, SCOPE_TYPE_);
@@ -488,10 +488,10 @@ create table ACT_HI_TASKINST (
     TENANT_ID_ varchar(255) default '',
     LAST_UPDATED_TIME_ datetime(3),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_HI_TSK_LOG (
-    ID_ bigint auto_increment,
+    ID_ bigint identify,
     TYPE_ varchar(64),
     TASK_ID_ varchar(64) not null,
     TIME_STAMP_ timestamp(3) not null,
@@ -506,7 +506,7 @@ create table ACT_HI_TSK_LOG (
     SCOPE_TYPE_ varchar(255),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_HI_TASK_SCOPE on ACT_HI_TASKINST(SCOPE_ID_, SCOPE_TYPE_);
 create index ACT_IDX_HI_TASK_SUB_SCOPE on ACT_HI_TASKINST(SUB_SCOPE_ID_, SCOPE_TYPE_);
@@ -530,7 +530,7 @@ create table ACT_RU_VARIABLE (
     TEXT_ varchar(4000),
     TEXT2_ varchar(4000),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_RU_VAR_SCOPE_ID_TYPE on ACT_RU_VARIABLE(SCOPE_ID_, SCOPE_TYPE_);
 create index ACT_IDX_RU_VAR_SUB_ID_TYPE on ACT_RU_VARIABLE(SUB_SCOPE_ID_, SCOPE_TYPE_);
@@ -561,7 +561,7 @@ create table ACT_HI_VARINST (
     CREATE_TIME_ datetime(3),
     LAST_UPDATED_TIME_ datetime(3),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_HI_PROCVAR_NAME_TYPE on ACT_HI_VARINST(NAME_, VAR_TYPE_);
 create index ACT_IDX_HI_VAR_SCOPE_ID_TYPE on ACT_HI_VARINST(SCOPE_ID_, SCOPE_TYPE_);
@@ -585,7 +585,7 @@ create table ACT_RU_EVENT_SUBSCR (
     SCOPE_TYPE_ varchar(64),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_EVENT_SUBSCR_CONFIG_ on ACT_RU_EVENT_SUBSCR(CONFIGURATION_);
 

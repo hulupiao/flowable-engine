@@ -6,7 +6,7 @@ create table ACT_PROCDEF_INFO (
     REV_ integer,
     INFO_JSON_ID_ varchar(64),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_INFO_PROCDEF on ACT_PROCDEF_INFO(PROC_DEF_ID_);
 

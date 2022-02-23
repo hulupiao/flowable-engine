@@ -3,17 +3,17 @@ create table ACT_GE_PROPERTY (
     VALUE_ varchar(300),
     REV_ integer,
     primary key (NAME_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_GE_BYTEARRAY (
     ID_ varchar(64),
     REV_ integer,
     NAME_ varchar(255),
     DEPLOYMENT_ID_ varchar(64),
-    BYTES_ LONGBLOB,
+    BYTES_ BLOB,
     GENERATED_ TINYINT,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 insert into ACT_GE_PROPERTY
 values ('common.schema.version', '6.6.0.1', 1);

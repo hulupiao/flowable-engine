@@ -8,7 +8,7 @@
 	<artifactId>flowable-root</artifactId>
 
 	<packaging>pom</packaging>
-	<version>6.6.0.20</version>
+	<version>6.6.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<distributionManagementSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</distributionManagementSnapshotsUrl>
@@ -1996,16 +1996,33 @@
 		<connection>scm:git:git@github.com:flowable/flowable-engine.git</connection>
 		<developerConnection>scm:git:git@github.com:flowable/flowable-engine.git</developerConnection>
 	</scm>
-	<distributionManagement>
-		<snapshotRepository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>${distributionManagementSnapshotsUrl}</url>
-		</snapshotRepository>
+
+	<repositories>
 		<repository>
-			<id>sonatype-nexus-staging</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>maven-nexus</id>
+			<name>maven-nexus</name>
+			<!--仓库地址-->
+			<url>http://192.168.1.159:8081/repository/maven-public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Releases</name>
+			<url>http://192.168.1.159:8081/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<!--上传快照-->
+			<id>snapshots</id>
+			<name>Snapshot</name>
+			<url>http://192.168.1.159:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>

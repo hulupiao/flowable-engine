@@ -16,7 +16,7 @@ create table ACT_RU_HISTORY_JOB (
     TENANT_ID_ varchar(255) default '',
     CREATE_TIME_ timestamp(3) NULL,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 update ACT_ID_PROPERTY set VALUE_ = '6.1.0.0' where NAME_ = 'schema.version';
 

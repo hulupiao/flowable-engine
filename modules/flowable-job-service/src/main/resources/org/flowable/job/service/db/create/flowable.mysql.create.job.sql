@@ -27,7 +27,7 @@ create table ACT_RU_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_TIMER_JOB (
     ID_ varchar(64) NOT NULL,
@@ -58,7 +58,7 @@ create table ACT_RU_TIMER_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_SUSPENDED_JOB (
     ID_ varchar(64) NOT NULL,
@@ -87,7 +87,7 @@ create table ACT_RU_SUSPENDED_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_DEADLETTER_JOB (
     ID_ varchar(64) NOT NULL,
@@ -115,7 +115,7 @@ create table ACT_RU_DEADLETTER_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_HISTORY_JOB (
     ID_ varchar(64) NOT NULL,
@@ -133,7 +133,7 @@ create table ACT_RU_HISTORY_JOB (
     SCOPE_TYPE_ varchar(255),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_EXTERNAL_JOB (
     ID_ varchar(64) NOT NULL,
@@ -164,7 +164,7 @@ create table ACT_RU_EXTERNAL_JOB (
     CREATE_TIME_ timestamp(3) NULL,
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_JOB_EXCEPTION_STACK_ID on ACT_RU_JOB(EXCEPTION_STACK_ID_);
 create index ACT_IDX_JOB_CUSTOM_VALUES_ID on ACT_RU_JOB(CUSTOM_VALUES_ID_);

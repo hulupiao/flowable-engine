@@ -10,7 +10,7 @@ create table ACT_RE_DEPLOYMENT (
     PARENT_DEPLOYMENT_ID_ varchar(255),
     ENGINE_VERSION_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RE_MODEL (
     ID_ varchar(64) not null,
@@ -27,7 +27,7 @@ create table ACT_RE_MODEL (
     EDITOR_SOURCE_EXTRA_VALUE_ID_ varchar(64),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_EXECUTION (
     ID_ varchar(64),
@@ -69,7 +69,7 @@ create table ACT_RU_EXECUTION (
     REFERENCE_TYPE_ varchar(255),
     PROPAGATED_STAGE_INST_ID_ varchar(255),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RE_PROCDEF (
     ID_ varchar(64) not null,
@@ -91,10 +91,10 @@ create table ACT_RE_PROCDEF (
     DERIVED_FROM_ROOT_ varchar(64),
     DERIVED_VERSION_ integer not null default 0,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_EVT_LOG (
-    LOG_NR_ bigint auto_increment,
+    LOG_NR_ bigint identify,
     TYPE_ varchar(64),
     PROC_DEF_ID_ varchar(64),
     PROC_INST_ID_ varchar(64),
@@ -102,12 +102,12 @@ create table ACT_EVT_LOG (
     TASK_ID_ varchar(64),
     TIME_STAMP_ timestamp(3) not null,
     USER_ID_ varchar(255),
-    DATA_ LONGBLOB,
+    DATA_ BLOB,
     LOCK_OWNER_ varchar(255),
     LOCK_TIME_ timestamp(3) null,
     IS_PROCESSED_ tinyint default 0,
     primary key (LOG_NR_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_PROCDEF_INFO (
 	ID_ varchar(64) not null,
@@ -115,7 +115,7 @@ create table ACT_PROCDEF_INFO (
     REV_ integer,
     INFO_JSON_ID_ varchar(64),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_RU_ACTINST (
     ID_ varchar(64) not null,
@@ -136,7 +136,7 @@ create table ACT_RU_ACTINST (
     DELETE_REASON_ varchar(4000),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_EXEC_BUSKEY on ACT_RU_EXECUTION(BUSINESS_KEY_);
 create index ACT_IDC_EXEC_ROOT on ACT_RU_EXECUTION(ROOT_PROC_INST_ID_);
@@ -343,7 +343,7 @@ create table ACT_HI_PROCINST (
     REFERENCE_TYPE_ varchar(255),
     primary key (ID_),
     unique (PROC_INST_ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_HI_ACTINST (
     ID_ varchar(64) not null,
@@ -364,7 +364,7 @@ create table ACT_HI_ACTINST (
     DELETE_REASON_ varchar(4000),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_HI_DETAIL (
     ID_ varchar(64) not null,
@@ -383,7 +383,7 @@ create table ACT_HI_DETAIL (
     TEXT_ varchar(4000),
     TEXT2_ varchar(4000),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_HI_COMMENT (
     ID_ varchar(64) not null,
@@ -394,9 +394,9 @@ create table ACT_HI_COMMENT (
     PROC_INST_ID_ varchar(64),
     ACTION_ varchar(255),
     MESSAGE_ varchar(4000),
-    FULL_MSG_ LONGBLOB,
+    FULL_MSG_ BLOB,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create table ACT_HI_ATTACHMENT (
     ID_ varchar(64) not null,
@@ -411,7 +411,7 @@ create table ACT_HI_ATTACHMENT (
     CONTENT_ID_ varchar(64),
     TIME_ datetime(3),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 
 create index ACT_IDX_HI_PRO_INST_END on ACT_HI_PROCINST(END_TIME_);

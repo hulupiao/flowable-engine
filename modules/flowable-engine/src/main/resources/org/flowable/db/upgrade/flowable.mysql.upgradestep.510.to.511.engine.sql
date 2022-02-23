@@ -38,7 +38,7 @@ create table ACT_RE_MODEL (
     EDITOR_SOURCE_VALUE_ID_ varchar(64),
     EDITOR_SOURCE_EXTRA_VALUE_ID_ varchar(64),
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 alter table ACT_RE_MODEL 
     add constraint ACT_FK_MODEL_SOURCE 

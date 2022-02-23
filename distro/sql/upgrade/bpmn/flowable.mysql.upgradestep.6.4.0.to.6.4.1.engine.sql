@@ -16,7 +16,7 @@ create table ACT_RU_ACTINST (
     DELETE_REASON_ varchar(4000),
     TENANT_ID_ varchar(255) default '',
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_RU_ACTI_START on ACT_RU_ACTINST(START_TIME_);
 create index ACT_IDX_RU_ACTI_END on ACT_RU_ACTINST(END_TIME_);

@@ -30,7 +30,7 @@ create table ACT_RU_TASK (
     ID_LINK_COUNT_ integer,
     SUB_TASK_COUNT_ integer,
     primary key (ID_)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_bin;
+) ;
 
 create index ACT_IDX_TASK_CREATE on ACT_RU_TASK(CREATE_TIME_);
 create index ACT_IDX_TASK_SCOPE on ACT_RU_TASK(SCOPE_ID_, SCOPE_TYPE_);
